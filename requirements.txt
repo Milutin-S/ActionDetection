@@ -1,0 +1,4 @@
+numpy
+matplotlib
+mediapipe==0.8.11
+tensorflow==2.10

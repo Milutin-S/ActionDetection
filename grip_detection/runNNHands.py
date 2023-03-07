@@ -1,17 +1,17 @@
 import cv2
 import numpy as np
-import os
+# import os
 from matplotlib import pyplot as plt
-import time
+# import time
 import mediapipe as mp
-from sklearn.model_selection import train_test_split
+# from sklearn.model_selection import train_test_split
 from tensorflow import keras
 from keras.utils import to_categorical
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
-from keras.callbacks import TensorBoard
+# from keras.callbacks import TensorBoard
 
-from PIL import ImageFont, ImageDraw, Image
+# from PIL import ImageFont, ImageDraw, Image
 
 ### Setup data collection
 
@@ -91,7 +91,8 @@ model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['categ
 # model.load_weights('weights/final/45/3x60/4/my_best_model.epoch90-loss0.03.h5')
 # model.load_weights('weights/final/45/3x60/additional/45_4_180e/my_best_model.epoch174-loss0.01.h5')
 
-model.load_weights('weights/final/45/full_4_rest_fix/my_best_model.epoch163-loss0.01.h5')
+# model.load_weights('weights/final/45/full_4_rest_fix/my_best_model.epoch163-loss0.01.h5')
+model.load_weights('weights/45/full_4_rest_fix/my_best_model.epoch163-loss0.01.h5')
 
 # model.load_weights('weights/final/60/full_7_rest_fix/my_best_model.epoch90-loss0.02.h5')
 # model.load_weights('weights/final/60/full_7_rest_fix/my_best_model.epoch177-loss0.01.h5')
@@ -120,7 +121,7 @@ res = np.zeros(len(actions))
 print("res:", res)
 forPlot = []
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(1)
 # Set mediapipe model
 with mp_hands.Hands(max_num_hands= 1, model_complexity=0, min_detection_confidence=0.5, min_tracking_confidence=0.5) as hands:
     while cap.isOpened():
